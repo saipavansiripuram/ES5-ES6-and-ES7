@@ -3,10 +3,6 @@
 
 
 ```markdown
-# JavaScript ES5, ES6, and ES7 Features
-
-## ES5 (2009) Key Features
-
 ### 1. Strict Mode
 Strict mode enforces stricter parsing and error handling.
 
