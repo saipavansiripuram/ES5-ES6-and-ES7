@@ -220,6 +220,117 @@ A shorthand for exponentiation using `**`.
 console.log(2 ** 3); // Output: 8
 ```
 
-For more details on these features and their usage, refer to the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+
+## ES8 (2017) Key Features
+
+### 1. `Object.values()`
+Returns an array of a given object's own enumerable property values.
+
+**Example:**
+```javascript
+const obj = { a: 1, b: 2, c: 3 };
+console.log(Object.values(obj)); // Output: [1, 2, 3]
 ```
+
+### 2. `Object.entries()`
+Returns an array of a given object's own enumerable property `[key, value]` pairs.
+
+**Example:**
+```javascript
+const obj = { a: 1, b: 2, c: 3 };
+console.log(Object.entries(obj)); // Output: [['a', 1], ['b', 2], ['c', 3]]
+```
+
+### 3. String Padding
+`padStart()` and `padEnd()` methods for strings.
+
+**Example:**
+```javascript
+console.log('5'.padStart(2, '0')); // Output: '05'
+console.log('5'.padEnd(2, '0')); // Output: '50'
+```
+
+### 4. `Object.getOwnPropertyDescriptors()`
+Returns all own property descriptors of a given object.
+
+**Example:**
+```javascript
+const obj = { a: 1, b: 2 };
+const descriptors = Object.getOwnPropertyDescriptors(obj);
+console.log(descriptors);
+// Output: { a: { value: 1, writable: true, enumerable: true, configurable: true }, b: { value: 2, writable: true, enumerable: true, configurable: true } }
+```
+
+### 5. Trailing Commas in Function Parameter Lists and Calls
+Allows trailing commas in function parameter lists and calls.
+
+**Example:**
+```javascript
+function foo(
+  param1,
+  param2,
+) {
+  // do something
+}
+
+foo(
+  'value1',
+  'value2',
+);
+```
+
+### 6. `async`/`await`
+Asynchronous functions that work with Promises, providing a cleaner syntax for asynchronous code.
+
+**Example:**
+```javascript
+async function fetchData() {
+  try {
+    let response = await fetch('https://api.example.com/data');
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchData();
+```
+
+## ES9 (2018) Key Features
+
+### 1. `async` Iteration
+Enables the use of `for await...of` loops to iterate over async iterables.
+
+**Example:**
+```javascript
+async function process(array) {
+  for await (let value of array) {
+    console.log(value);
+  }
+}
+
+const asyncIterable = {
+  [Symbol.asyncIterator]: async function* () {
+    yield 'Hello';
+    yield 'Async';
+    yield 'Iteration';
+  }
+};
+
+process(asyncIterable); // Output: Hello Async Iteration
+```
+
+### 2. Rest/Spread Properties
+Rest properties collect the remaining own enumerable property keys that are not already picked off by destructuring. Spread properties spread the own enumerable properties of an object.
+
+**Example:**
+```javascript
+const obj = { a: 1, b: 2, c: 3 };
+const { a, ...rest } = obj;
+console.log(a); // Output: 1
+console.log(rest); // Output: { b: 2, c: 3 }
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = {
 
