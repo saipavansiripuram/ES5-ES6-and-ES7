@@ -2,7 +2,6 @@
 
 
 
-```markdown
 ### 1. Strict Mode
 Strict mode enforces stricter parsing and error handling.
 
