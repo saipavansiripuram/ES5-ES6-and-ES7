@@ -321,16 +321,3 @@ const asyncIterable = {
 process(asyncIterable); // Output: Hello Async Iteration
 ```
 
-### 2. Rest/Spread Properties
-Rest properties collect the remaining own enumerable property keys that are not already picked off by destructuring. Spread properties spread the own enumerable properties of an object.
-
-**Example:**
-```javascript
-const obj = { a: 1, b: 2, c: 3 };
-const { a, ...rest } = obj;
-console.log(a); // Output: 1
-console.log(rest); // Output: { b: 2, c: 3 }
-
-const obj1 = { a: 1, b: 2 };
-const obj2 = {
-
